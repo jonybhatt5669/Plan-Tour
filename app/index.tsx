@@ -1,10 +1,15 @@
 import { LinearGradient } from 'expo-linear-gradient';
+import { useRouter } from 'expo-router';
 import { ImageBackground, StyleSheet, Text, TouchableHighlight, View } from 'react-native';
 
 // Import the image (ensure the path is correct)
 const image = require('../assets/images/tour.jpg');
 
 export default function Home() {
+  const router = useRouter();
+  const pusScreenToPhoneNumber = () => {
+    router.push('./onboarding');
+  };
   return (
     <>
       <View style={styles.container}>
@@ -15,7 +20,7 @@ export default function Home() {
               activeOpacity={0.6}
               underlayColor="#DDDDDD"
               style={styles.touchable}
-              onPress={() => alert('Pressed!')}>
+              onPress={pusScreenToPhoneNumber}>
               <LinearGradient colors={['#4B5EFC', '#7F9CF5']} style={styles.button}>
                 <Text style={styles.buttonText}>Let's get started</Text>
               </LinearGradient>
