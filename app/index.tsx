@@ -42,6 +42,7 @@ const styles = StyleSheet.create({
     fontSize: 24, // text-3xl equivalent (~24px)
     color: '#FFFFFF',
     lineHeight: 32, // Add spacing for readability with \n
+    fontFamily: 'Phil_Bold',
   },
   touchable: {
     width: '100%',
@@ -74,5 +75,6 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     fontSize: 18,
     fontWeight: 'medium',
+    fontFamily: 'Lora_Medium',
   },
 });
