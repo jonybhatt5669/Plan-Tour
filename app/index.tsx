@@ -2,7 +2,6 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { useRouter } from 'expo-router';
 import { ImageBackground, StyleSheet, Text, TouchableHighlight, View } from 'react-native';
 
-// Import the image (ensure the path is correct)
 const image = require('../assets/images/tour.jpg');
 
 export default function Home() {
