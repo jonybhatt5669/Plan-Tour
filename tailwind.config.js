@@ -7,6 +7,7 @@ module.exports = {
     extend: {
       fontFamily: {
         'Phil-Bold': ['Phil_Bold', 'san-serif'],
+        Lora_Medium: ['Lora_Medium', 'san-serif'],
       },
     },
   },
