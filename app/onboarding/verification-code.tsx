@@ -37,12 +37,17 @@ export default function VerificationCode() {
     router.push('/onboarding/location-tracker');
   };
 
+  const handleBack = () => {
+    setStep(1);
+    router.push('/onboarding/phone-input');
+  };
+
   return (
     <View className="flex-1">
-      <View className="flex-row items-center gap-2 px-4 py-4">
+      <Pressable onPress={handleBack} className="flex-row items-center gap-2 px-4 py-4">
         <AntDesign name="arrowleft" size={20} color="black" />
-        <Text className="font-semibold">Verification Code</Text>
-      </View>
+        <Text className="text-lg font-semibold text-[Phil_Bold]">Verification Code</Text>
+      </Pressable>
       <View className="mt-8 flex-1 px-4">
         <Text className="text-2xl font-semibold">Enter the code</Text>
         <View className="mt-4 w-full flex-row items-center gap-4">
