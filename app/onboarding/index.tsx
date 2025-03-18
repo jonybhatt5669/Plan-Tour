@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { LinearGradient } from 'expo-linear-gradient';
 import { Link, Stack } from 'expo-router';
 import { View, Text, ImageBackground, StyleSheet } from 'react-native';

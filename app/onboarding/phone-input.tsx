@@ -44,7 +44,7 @@ const PhoneInput = () => {
         <Text className="text-3xl font-bold text-white">Plan Tour</Text>
       </LinearGradient>
       <View className="my-8 flex-1 px-8">
-        <Text className="text-2xl font-bold">Enter your phone number</Text>
+        <Text className="font-Phil-Bold text-3xl font-semibold">Enter your phone number</Text>
         <View className="mt-8 flex-row items-center gap-2">
           <CustomCountryPicker
             onSelectCountryCode={(dialCode: string) => setCountryCode(dialCode)}
