@@ -7,14 +7,18 @@ import CustomCountryPicker from '~/components/CustomDropdown';
 
 import AntDesign from '@expo/vector-icons/AntDesign';
 import { useRouter } from 'expo-router';
+import { useOnboarding } from '~/context/onboardingContext';
 
 const PhoneInput = () => {
+  const { setStep, setPhone } = useOnboarding();
   const [countryCode, setCountryCode] = useState<string>('+1');
   const [phoneNumber, setPhoneNumber] = useState('');
   const router = useRouter();
 
   const handleNext = () => {
     router.push('/onboarding/verification-code');
+    setStep(2);
+    setPhone(`${countryCode}${phoneNumber}`);
   };
 
   const logo = require('../../assets/images/logo.png');
