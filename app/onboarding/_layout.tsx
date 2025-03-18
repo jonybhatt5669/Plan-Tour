@@ -21,6 +21,7 @@ export default function OnboardingLayout() {
         />
 
         <Stack.Screen name="verification-code" options={{ headerShown: false }} />
+        <Stack.Screen name="location-tracker" options={{ headerShown: false }} />
       </Stack>
     </OnboardingProvider>
   );
