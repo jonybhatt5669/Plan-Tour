@@ -11,6 +11,7 @@ import {
   Philosopher_400Regular as Phil_Regular,
   Philosopher_700Bold as Phil_Bold,
 } from '@expo-google-fonts/philosopher';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
@@ -35,10 +36,13 @@ export default function Layout() {
   if (!loaded && !error) {
     return null;
   }
+  const queryClient = new QueryClient();
   return (
-    <Stack>
-      <Stack.Screen name="index" options={{ headerShown: false }} />
-    </Stack>
+    <QueryClientProvider client={queryClient}>
+      <Stack>
+        <Stack.Screen name="index" options={{ headerShown: false }} />
+      </Stack>
+    </QueryClientProvider>
   );
 }
 
