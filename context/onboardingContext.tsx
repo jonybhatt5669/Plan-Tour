@@ -8,6 +8,10 @@ interface OnBoardingContextType {
   setPhone: (phone: string) => void;
   address: string;
   setAddress: (address: string) => void;
+  firstName: string;
+  setFirstName: (firstName: string) => void;
+  lastName: string;
+  setLastName: (lastName: string) => void;
 }
 
 const OnboardingContext = createContext<OnBoardingContextType | undefined>(undefined);
@@ -16,9 +20,23 @@ export const OnboardingProvider = ({ children }: { children: ReactNode }) => {
   const [step, setStep] = useState(1);
   const [phone, setPhone] = useState('');
   const [address, setAddress] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
 
   return (
-    <OnboardingContext.Provider value={{ step, setStep, phone, setPhone, address, setAddress }}>
+    <OnboardingContext.Provider
+      value={{
+        step,
+        setStep,
+        phone,
+        setPhone,
+        address,
+        setAddress,
+        firstName,
+        setFirstName,
+        lastName,
+        setLastName,
+      }}>
       {children}
     </OnboardingContext.Provider>
   );
