@@ -1,11 +1,15 @@
 /* eslint-disable prettier/prettier */
 import AntDesign from '@expo/vector-icons/AntDesign';
+import { useRouter } from 'expo-router';
 import { useRef, useState } from 'react';
 import { View, Text, Pressable, TextInput } from 'react-native';
+import { useOnboarding } from '~/context/onboardingContext';
 export default function VerificationCode() {
+  const { setStep } = useOnboarding();
   const OTP_LENGTH = 6;
   const [otp, setOtp] = useState<string[]>(Array(OTP_LENGTH).fill(''));
   const inputRef = useRef<TextInput[]>([]);
+  const router = useRouter();
 
   const handleChange = (value: string, index: number) => {
     if (value.length > 1) return;
@@ -26,6 +30,11 @@ export default function VerificationCode() {
     const newOtp = [...otp];
     newOtp[index] = '';
     setOtp(newOtp);
+  };
+
+  const handleNext = () => {
+    setStep(3);
+    router.push('/onboarding/location-tracker');
   };
 
   return (
@@ -54,7 +63,7 @@ export default function VerificationCode() {
           ))}
         </View>
       </View>
-      <Pressable className="items-end justify-end  px-8 py-8">
+      <Pressable onPress={handleNext} className="items-end justify-end  px-8 py-8">
         <View className="size-16 items-center justify-center rounded-full bg-black">
           <AntDesign name="arrowright" size={24} color="white" />
         </View>
